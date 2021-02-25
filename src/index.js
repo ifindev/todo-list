@@ -10,24 +10,6 @@ const todos = [
     dueDate: "15 Mei 2021",
     completed: false
   },
-  {
-    id: 2,
-    title: "Going out with my girlfriend",
-    dueDate: "11 Mei 2021",
-    completed: false
-  },
-  {
-    id: 3,
-    title: "buying cake for birthday party",
-    dueDate: "16 Mei 2021",
-    completed: false
-  },
-  {
-    id: 4,
-    title: "appointment with Dr. Kyle",
-    dueDate: "20 Mei 2021",
-    completed: false
-  }
 ];
 
 const rootElement = document.getElementById("root");
