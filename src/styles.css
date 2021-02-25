@@ -21,7 +21,7 @@ body {
 }
 
 .TodoApp {
-  width: 60%;
+  width: 30%;
   min-height: 300px;
   margin: 80px auto;
   padding: 60px;
@@ -29,7 +29,7 @@ body {
   border-radius: 5px;
   -moz-box-shadow: 0 0 4px #ccc;
   -webkit-box-shadow: 0 0 4px #ccc;
-  box-shadow: 0 0 4px #ccc;
+  box-shadow: 0 0 5px #ccc;
 }
 
 .TodoApp h1 {
@@ -51,7 +51,7 @@ body {
   margin-bottom: 20px;
   -moz-box-shadow: 0 0 4px #eee;
   -webkit-box-shadow: 0 0 4px #eee;
-  box-shadow: 1px 1px 5px #eee;
+  box-shadow: 1px 2px 5px #eee;
 }
 
 .trash-icon {
@@ -96,4 +96,21 @@ body {
 .todo-btn:hover,
 .todo-btn:active {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  .TodoApp {
+    width:80%;
+    margin: 50px auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    font-size: 13px;
+  }
+
+  .TodoApp {
+    padding: 30px;
+  }
 }
