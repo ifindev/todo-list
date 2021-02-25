@@ -1,13 +1,16 @@
 import "../styles.css";
 
-const TodoList = ({ list }) => {
+import DeleteTodo from './DeleteTodo'
+
+const TodoList = ({ list, onDelete }) => {
   return (
     <div className="todo-list">
       {list.map((todo, id) => {
         return (
-          <p key={id} className="todo-item">
+          <div key={id} className="todo-item">
             {todo.title}
-          </p>
+            <DeleteTodo  onClick={() => onDelete(id)}/>
+          </div>
         );
       })}
     </div>

@@ -77,19 +77,28 @@ body {
   border-color: #b68973;
 }
 
-.todo-btn {
+.btn {
   align-self: flex-end;
   padding: 15px 5px;
-  width: 130px;
-  margin-bottom:25px;
   background-color: #eabf9f;
   border: none;
   border-radius: 5px;
+  font-family: "Quicksand";
+  font-weight: bold;
 }
 
-.todo-btn:hover,
-.todo-btn:active {
+.btn:hover,
+.btn:active {
   cursor: pointer;
+}
+
+.add-btn {
+  width:120px;
+  margin-bottom:25px;
+}
+
+.delete-btn {
+  width:50px;
 }
 
 @media only screen and (max-width: 1024px) {

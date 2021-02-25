@@ -16,7 +16,7 @@ const AddTodo = ({ newTodo, onNewTodo, onButtonClick }) => {
         onChange={newTodoHandle}
         className="todo-input"
       />
-      <button onClick={onButtonClick} className="todo-btn">
+      <button onClick={onButtonClick} className="btn add-btn">
         Add New Todo
       </button>
     </div>

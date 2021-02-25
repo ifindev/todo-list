@@ -38,6 +38,10 @@ const TodoApp = ({ todos }) => {
     // console.log(newTodo);
   };
 
+  const deleteHandler = (id) => {
+    setTodoList((last) => last.filter((_, idx) => idx!==id));
+  }
+
   return (
     <div className="TodoApp">
       <h1>My Todo List</h1>
@@ -46,7 +50,7 @@ const TodoApp = ({ todos }) => {
         onNewTodo={newTodoHandle}
         onButtonClick={handleButtonClick}
       />
-      <TodoList list={todoList} />
+      <TodoList list={todoList} onDelete={deleteHandler}/>
     </div>
   );
 }
