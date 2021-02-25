@@ -37,12 +37,12 @@ export default function TodoApp({ todos }) {
   return (
     <div className="TodoApp">
       <h1>My Todo List</h1>
-      <TodoList list={todoList} />
       <AddTodo
         newTodo={newTodo}
         onNewTodo={newTodoHandle}
         onButtonClick={handleButtonClick}
       />
+      <TodoList list={todoList} />
     </div>
   );
 }
@@ -71,7 +71,7 @@ const AddTodo = ({ newTodo, onNewTodo, onButtonClick }) => {
       <textarea
         type="text"
         placeholder="Add new todo..."
-        rows="4"
+        rows="2"
         cols="50"
         value={newTodo}
         onChange={newTodoHandle}

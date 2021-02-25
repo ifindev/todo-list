@@ -48,32 +48,25 @@ body {
   justify-content: space-between;
   border-left: 5px solid #eabf9f;
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 25px 0;
   -moz-box-shadow: 0 0 4px #eee;
   -webkit-box-shadow: 0 0 4px #eee;
   box-shadow: 1px 2px 5px #eee;
 }
 
-.trash-icon {
-  width: 20px;
-  color: #b68973;
-}
-
-.trash-icon:hover,
-.trash-icon:focus {
-  cursor: pointer;
-}
 
 .AddTodo {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
+  border-bottom: 2px solid #eee;
+  border-top: 2px solid #eee;
 }
 
 .todo-input {
   padding: 10px;
   resize: none;
-  margin-bottom: 20px;
+  margin: 25px 0;
   border: 1px solid #d3e0ea;
   border-radius: 5px;
   font-family: "Quicksand", sans-serif;
@@ -88,6 +81,7 @@ body {
   align-self: flex-end;
   padding: 15px 5px;
   width: 130px;
+  margin-bottom:25px;
   background-color: #eabf9f;
   border: none;
   border-radius: 5px;
@@ -112,5 +106,9 @@ body {
 
   .TodoApp {
     padding: 30px;
+  }
+
+  .todo-input {
+    font-size:13px;
   }
 }
