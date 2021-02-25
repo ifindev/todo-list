@@ -1,25 +1,85 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./styles.css";
 
-function App() {
+export default function TodoApp({ todos }) {
+  const [todoList, setTodoList] = useState(todos);
+  const [newTodo, setNewTodo] = useState("");
+
+  let warningMessage = "You haven't write anything for your new todo :)";
+
+  const handleButtonClick = () => {
+    let todoItem = {
+      id: 0,
+      title: "",
+      dueDate: "15 Mei 2021",
+      completed: false
+    };
+    if (newTodo !== "") {
+      todoItem.id = todoList.length + 1;
+      todoItem.title = newTodo;
+
+      // Add new todo list
+      const newTodoList = [...todoList, todoItem];
+      setTodoList(newTodoList);
+
+      // Clear the input
+      setNewTodo("");
+    } else {
+      alert(warningMessage);
+    }
+  };
+
+  const newTodoHandle = (item) => {
+    setNewTodo(item);
+    // console.log(newTodo);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="TodoApp">
+      <h1>My Todo List</h1>
+      <TodoList list={todoList} />
+      <AddTodo
+        newTodo={newTodo}
+        onNewTodo={newTodoHandle}
+        onButtonClick={handleButtonClick}
+      />
     </div>
   );
 }
 
-export default App;
+const TodoList = ({ list }) => {
+  return (
+    <div className="todo-list">
+      {list.map((todo, id) => {
+        return (
+          <p key={id} className="todo-item">
+            {todo.title}
+          </p>
+        );
+      })}
+    </div>
+  );
+};
+
+const AddTodo = ({ newTodo, onNewTodo, onButtonClick }) => {
+  const newTodoHandle = (event) => {
+    onNewTodo(event.target.value);
+  };
+
+  return (
+    <div className="AddTodo">
+      <textarea
+        type="text"
+        placeholder="Add new todo..."
+        rows="4"
+        cols="50"
+        value={newTodo}
+        onChange={newTodoHandle}
+        className="todo-input"
+      />
+      <button onClick={onButtonClick} className="todo-btn">
+        Add New Todo
+      </button>
+    </div>
+  );
+};

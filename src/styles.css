@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+*,
+*:focus,
+*:hover {
+  outline: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0efe9;
+  color: #1e212d;
+  font-family: "Quicksand", sans-serif;
+  font-size: 17px;
+}
+
+.TodoApp {
+  width: 60%;
+  min-height: 300px;
+  margin: 80px auto;
+  padding: 60px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 4px #ccc;
+  -webkit-box-shadow: 0 0 4px #ccc;
+  box-shadow: 0 0 4px #ccc;
+}
+
+.TodoApp h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.todo-list {
+  font-family: "Open Sans", sans-serif;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 5px solid #eabf9f;
+  padding: 20px;
+  margin-bottom: 20px;
+  -moz-box-shadow: 0 0 4px #eee;
+  -webkit-box-shadow: 0 0 4px #eee;
+  box-shadow: 1px 1px 5px #eee;
+}
+
+.trash-icon {
+  width: 20px;
+  color: #b68973;
+}
+
+.trash-icon:hover,
+.trash-icon:focus {
+  cursor: pointer;
+}
+
+.AddTodo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.todo-input {
+  padding: 10px;
+  resize: none;
+  margin-bottom: 20px;
+  border: 1px solid #d3e0ea;
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+}
+
+.todo-input:focus {
+  border-color: #b68973;
+}
+
+.todo-btn {
+  align-self: flex-end;
+  padding: 15px 5px;
+  width: 130px;
+  background-color: #eabf9f;
+  border: none;
+  border-radius: 5px;
+}
+
+.todo-btn:hover,
+.todo-btn:active {
+  cursor: pointer;
+}
