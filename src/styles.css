@@ -92,13 +92,21 @@ body {
   cursor: pointer;
 }
 
+.todo-btn {
+  display: flex;
+  flex-direction: row;
+}
+
 .add-btn {
   width:120px;
   margin-bottom:25px;
 }
 
-.delete-btn {
-  width:50px;
+.util-btn {
+  padding: 0;
+  width:30px;
+  height: 30px;
+  margin-left: 5px;
 }
 
 @media only screen and (max-width: 1024px) {
