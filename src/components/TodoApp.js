@@ -11,7 +11,7 @@ const TodoApp = ({ todos }) => {
 
   let warningMessage = "You haven't write anything for your new todo :)";
 
-  const handleButtonClick = () => {
+  const handleAddTodo = () => {
     let todoItem = {
       id: 0,
       title: "",
@@ -42,15 +42,24 @@ const TodoApp = ({ todos }) => {
     setTodoList((last) => last.filter((_, idx) => idx!==id));
   }
 
+  const completeHandler = (id) => {
+    setTodoList((last) => last.filter((item, idx) => {
+      if(idx === id) {
+        item.completed = true; 
+      }
+      return item;
+    }));
+  }
+
   return (
     <div className="TodoApp">
       <h1>My Todo List</h1>
       <AddTodo
         newTodo={newTodo}
         onNewTodo={newTodoHandle}
-        onButtonClick={handleButtonClick}
+        onButtonClick={handleAddTodo}
       />
-      <TodoList list={todoList} onDelete={deleteHandler}/>
+      <TodoList list={todoList} onDelete={deleteHandler} onComplete={completeHandler}/>
     </div>
   );
 }
