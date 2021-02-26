@@ -9,7 +9,7 @@ const TodoList = ({ list, onDelete, onComplete }) => {
       {list.map((todo, id) => {
         return (
           <div key={id} className="todo-item">
-            {todo.completed ? <span style={{textDecoration:"line-through"}}>{todo.title}</span> : todo.title}
+            {todo.completed ? <span style={{textDecoration:"line-through"}}>{todo.title}</span> : <span style={{textDecoration:"none"}}>{todo.title}</span>}
             <div className="todo-btn">
             <ChecklistTodo onClick={() => onComplete(id)}/>
             <DeleteTodo  onClick={() => onDelete(id)}/>

@@ -43,11 +43,11 @@ const TodoApp = ({ todos }) => {
   }
 
   const completeHandler = (id) => {
-    setTodoList((last) => last.filter((item, idx) => {
-      if(idx === id) {
-        item.completed = true; 
-      }
-      return item;
+    setTodoList((last) => last.map(({completed, ...item}, idx) => {
+    	if(idx === id) {
+    		return {...item, completed:!completed};
+    	}
+    	return {...item, completed};
     }));
   }
 
