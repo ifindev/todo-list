@@ -11,8 +11,16 @@ const TodoList = ({ list, onDelete, onComplete }) => {
           <div key={id} className="todo-item">
             {todo.completed ? <span style={{textDecoration:"line-through"}}>{todo.title}</span> : <span style={{textDecoration:"none"}}>{todo.title}</span>}
             <div className="todo-btn">
-            <ChecklistTodo onClick={() => onComplete(id)}/>
-            <DeleteTodo  onClick={() => onDelete(id)}/>
+            
+            {todo.completed ? 
+              <ChecklistTodo  onClick={() => onComplete(id)} style={{backgroundColor:"#c7ffd8"}}/> :
+              <ChecklistTodo  onClick={() => onComplete(id)}/>
+            }
+
+            {todo.completed ? 
+              <DeleteTodo  onClick={() => onDelete(id)} style={{backgroundColor:"#ffb4b4"}}/> :
+              <DeleteTodo  onClick={() => onDelete(id)}/>
+            }
             </div>
           </div>
         );
