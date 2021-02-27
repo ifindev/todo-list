@@ -1,15 +1,31 @@
 import "../styles.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Import components
 import AddTodo from './AddTodo.js'
 import TodoList from './TodoList.js'
 
+// Custom hook to store Todo Items on local storage
+const useLocalStorageInTodo = localStorageKey => {
+  
+}
+
+
 const TodoApp = ({ todos }) => {
-  const [todoList, setTodoList] = useState(todos);
+  const json = localStorage.getItem('todoLists');
+  const todoLists = JSON.parse(json) || []; 
+
+  const [todoList, setTodoList] = useState(todoLists || todos);
   const [newTodo, setNewTodo] = useState("");
 
   let warningMessage = "You haven't write anything for your new todo :)";
+
+  useEffect(() => {
+    localStorage.setItem("todoLists", JSON.stringify(todoList))
+    // return () => {
+    //   localStorage.removeItem("todoLists");
+    // }
+  }, [todoList])
 
   const handleAddTodo = () => {
     let todoItem = {
