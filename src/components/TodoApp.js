@@ -7,7 +7,7 @@ import TodoList from './TodoList.js'
 import useLocalStorageInTodo from './customHooks/useLocalStorageInTodo';
 
 const TodoApp = ({ todos }) => {
-  const [todoList, setTodoList] = useLocalStorageInTodo("todoLists", todos);
+  const [todoList, setTodoList] = useLocalStorageInTodo(todos);
   const [newTodo, setNewTodo] = useState("");
 
   let warningMessage = "You haven't write anything for your new todo :)";
