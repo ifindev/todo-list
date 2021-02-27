@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-
 const useLocalStorageInTodo = (localStorageKey, todos) => {
   const json = localStorage.getItem(localStorageKey);
   const todoLists = JSON.parse(json) || []; 
 
   const [todoList, setTodoList] = useState(todoLists || todos);
 
-  useEffect(() => {
+  useEffect((localStorageKey) => {
     localStorage.setItem(localStorageKey, JSON.stringify(todoList))
   }, [todoList])
 
